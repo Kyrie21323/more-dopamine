@@ -64,10 +64,7 @@ The user's selected category determines the type of hobby suggestion returned. E
 ## **Credits for AI-Generated Code**
 This project was developed with assistance from AI tools (ChatGPT) throughout the process:
 - **Category Button Design**: AI provided suggestions for creating dynamic buttons for each category to enhance user interaction.
-- **API Integration**: AI assisted in coding the Fetch API requests, error handling, and state management.
-- **Error Handling**: AI helped in implementing best practices for handling API errors and ensuring the app does not crash under unexpected conditions.
 - **Styling**: AI provided guidance on CSS styles for a cleaner and more modern look.
-- **Documentation**: This README file, along with comments in the code, was crafted with the support of AI to ensure clarity and completeness.
 
 ## **Troubleshooting**
 If you run into any issues:
