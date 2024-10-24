@@ -21,7 +21,7 @@ const HobbySuggestion = () => {
     //loading state is true while fetching
     setLoading(true);
     //debugging
-    //console.log(`Fetching hobby from category: ${category}`);
+    console.log(`Fetching hobby from category: ${category}`);
     //fetch data from the API based on the selected category
     fetch(`https://api.api-ninjas.com/v1/hobbies?category=${category}`,{
       method: 'GET',
@@ -30,6 +30,16 @@ const HobbySuggestion = () => {
         'Content-Type': 'application/json',
       },
     })
+      .then(response =>{
+        //debugging
+        console.log("API Response Status:", response.status);
+        
+        //if response is not OK throw an error
+        if(!response.ok){
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
       .then(data =>{        
         //check if valid data is received and set the hobby state
         if(data && typeof data === 'object' && data.hobby){
