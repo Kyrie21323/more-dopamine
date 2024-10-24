@@ -16,7 +16,7 @@ Follow these steps to set up and run the project on your local machine:
 
 1. **Clone the repository**:
    ```bash
-   git clone YOUR_REPOSITORY_URL
+   git clone https://github.com/Kyrie21323/more-dopamine.git
    cd more-dopamine
    ```
 
@@ -26,9 +26,9 @@ Follow these steps to set up and run the project on your local machine:
    npm install
    ```
 
-3. **Set Up Your API Key**:
+3. **Create a .env file in the root directory of your project and add your API key:**:
    - Visit [API Ninjas](https://api-ninjas.com/) and sign up to get your free API key.
-   - Open `HobbySuggestion.js` and replace `'YOUR_API_KEY_HERE'` with your actual API key.
+   - REACT_APP_API_KEY = 'put your own key'
 
 4. **Start the development server**:
    ```bash
