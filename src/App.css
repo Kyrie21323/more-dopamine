@@ -1,126 +1,128 @@
-/* App.css */
-
-body {
-  margin: 0;
+/*styles for entire page*/
+body{
+  margin: 0; /*remove default margin*/
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif;                           /*font stack*/
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #1e1e1e; /* Dark background for contrast */
-  color: #ffffff; /* White text for better visibility */
+  background-color: #1e1e1e;            /*dark background for better contrast*/
+  color: #ffffff;                       /*white text for better contrast*/
 }
 
-h1 {
-  color: #57068c; /* NYU Purple for the main heading */
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
+/*main heading*/
+h1{
+  color: #57068c;                       /*NYU Purple color*/
+  font-size: 2.5rem;                      /*larger size*/
+  margin-bottom: 1.5rem;                  /*space below the main heading*/
 }
 
-h2 {
-  color: #ffffff; /* White for secondary headings */
-  margin-bottom: 1rem;
+/*secondary heading*/
+h2{
+  color: #ffffff;                       /*white color*/
+  margin-bottom: 1rem;                    /*space below the subheading*/
 }
 
-.App {
-  text-align: center;
-  padding: 2rem;
+/*cotainer style*/
+.App{
+  text-align: center;                     /*center-align*/
+  padding: 2rem;                          /*padding*/
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/*container header style*/
+.App-header{
+  background-color: #282c34;            /*dark background*/
+  min-height: 100vh;                      /*full viewport*/
+  display: flex;                          /*flexbox for centering*/
+  flex-direction: column;                 /*stack items vertically*/
+  align-items: center;                    /*center align - h*/
+  justify-content: center;                /*center align - v*/
+  font-size: calc(10px + 2vmin);          /*font size*/
+  color: white;                         /*white text*/
 }
 
-h2 {
-  color: #ffffff;
+/*button styles*/
+button{
+  background-color: #57068c;            /*NYU Purple for button background*/
+  color: #ffffff;                       /*white text*/
+  border: none;                           /*remove border*/
+  padding: 10px 20px;                     /*space inside button*/
+  font-size: 1rem;                        /*font size for buttons*/
+  margin: 10px;                           /*space around buttons*/
+  border-radius: 5px;                     /*rounded corners for buttons*/
+  cursor: pointer;                        /*pointer cursor on hover*/
+  transition: background-color 0.3s;      /*smooth color change on hover*/
 }
 
-button {
-  background-color: #57068c; /* NYU Purple */
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  margin: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+/*button hover effect*/
+button:hover{
+  background-color: #6d1fa7;            /*lighter purple*/
 }
 
-button:hover {
-  background-color: #6d1fa7; /* Lighter shade for hover */
+/*button focus*/
+button:focus{
+  outline: none;                          /*remove outline*/
 }
 
-button:focus {
-  outline: none;
+/*url style*/
+a{
+  color: #61dafb;                       /*light blue*/
+  text-decoration: none;                  /*no underline*/
+  margin-top: 10px;                       /*space above link*/
+  display: inline-block;                  /*make links as block elements*/
 }
 
-a {
-  color: #61dafb; /* Light blue for links */
-  text-decoration: none;
-  margin-top: 10px;
-  display: inline-block;
+/*url hover effect*/
+a:hover{
+  text-decoration: underline;             /*underlining*/
 }
 
-a:hover {
-  text-decoration: underline;
+/*loading style*/
+.loading{
+  font-size: 1.2rem;                      /*larger text size*/
+  margin-top: 1rem;                       /*space above text*/
+  color: #bbbbbb;                       /*gray color*/
 }
 
-.loading {
-  font-size: 1.2rem;
-  margin-top: 1rem;
-  color: #bbbbbb; /* Gray for loading text */
+/*container for suggestion box*/
+.hobby-container{
+  background-color: #2c2c2c;            /*dark gray background for hobby box*/
+  padding: 20px;                          /*padding around box*/
+  border-radius: 8px;                     /*rounded corners*/
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);        /*shadow effect*/
+  max-width: 500px;                       /*max-width*/
+  margin: 0 auto;                         /*center align*/
+  margin-top: 20px;                       /*space - top of the container*/
 }
 
-.hobby-container {
-  background-color: #2c2c2c; /* Slightly lighter background for the hobby box */
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  max-width: 500px;
-  margin: 0 auto;
-  margin-top: 20px;
+/*category buttons container*/
+.category-buttons{
+  margin: 20px 0;                         /*vertical margin*/
+  display: flex;                          /*flexbox for button alignment*/
+  gap: 10px;                              /*space between buttons*/
+  justify-content: center;                /*center buttons - h*/
 }
 
-hobby-container h2 {
-  margin-bottom: 1rem;
+/*category button styles*/
+.category-button{
+  background-color: #57068c;            /*NYU Purple*/
+  color: #ffffff;                       /*white text*/
+  border: none;                           /*remove border*/
+  padding: 10px 15px;                     /*padding*/
+  font-size: 0.9rem;                      /*font size smaller than default*/
+  margin: 5px;                            /*space around buttons*/
+  border-radius: 5px;                     /*rounded corners*/
+  cursor: pointer;                        /*pointer cursor on hover*/
+  transition: background-color 0.3s;      /*smooth transition for hover effect*/
 }
 
-/* Style for category buttons */
-.category-buttons {
-  margin: 20px 0;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
+/*hover effect for category buttons*/
+.category-button:hover{
+  background-color: #6d1fa7;            /*lighter purple on hover*/
 }
 
-.category-button {
-  background-color: #57068c;
-  color: #ffffff;
-  border: none;
-  padding: 10px 15px;
-  font-size: 0.9rem;
-  margin: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.category-button:hover {
-  background-color: #6d1fa7;
-}
-
-/* Style for hobby details */
-.hobby-details {
-  margin-top: 20px;
-  text-align: center;
-  color: #dddddd;
+/*hobby details display styles*/
+.hobby-details{
+  margin-top: 20px;                       /*space above the hobby details*/
+  text-align: center;                     /*center-align text*/
+  color: #dddddd;                       /*light gray color for details*/
 }

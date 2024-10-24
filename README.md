@@ -65,6 +65,7 @@ The user's selected category determines the type of hobby suggestion returned. E
 This project was developed with assistance from AI tools (ChatGPT) throughout the process:
 - **Category Button Design**: AI provided suggestions for creating dynamic buttons for each category to enhance user interaction.
 - **Styling**: AI provided guidance on CSS styles for a cleaner and more modern look.
+- **Debugging**: AI provided guidance on the usage of manifest.json, where I had a problem with it while fetching data.
 
 ## **Troubleshooting**
 If you run into any issues:

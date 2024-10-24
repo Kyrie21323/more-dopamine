@@ -1,74 +1,80 @@
 import React, { useState, useEffect } from 'react';
-
 const HobbySuggestion = () => {
+  //store fetched hobby data
   const [hobby, setHobby] = useState(null);
+  //handle loading status
   const [loading, setLoading] = useState(false);
+  //API key stored in .env file for security
   const API_KEY = process.env.REACT_APP_API_KEY;
-  const categories = [
+  //available hobby categories
+  const categories=[
     'general',
     'sports_and_outdoors',
     'education',
     'collection',
     'competition',
     'observation',
-  ]; // Available categories
+  ];
 
-  // Function to fetch a random hobby based on category
-  const fetchRandomHobby = (category) => {
+  //function to fetch random hobby based on the selected category
+  const fetchRandomHobby = (category)=>{
+    //loading state is true while fetching
     setLoading(true);
-
-    console.log(`Fetching hobby from category: ${category}`); // Check which category is being fetched
-
-    fetch(`https://api.api-ninjas.com/v1/hobbies?category=${category}`, {
+    //debugging
+    //console.log(`Fetching hobby from category: ${category}`);
+    //fetch data from the API based on the selected category
+    fetch(`https://api.api-ninjas.com/v1/hobbies?category=${category}`,{
       method: 'GET',
       headers: {
         'X-Api-Key': API_KEY,
         'Content-Type': 'application/json',
       },
     })
-      .then(response => {
-        console.log("API Response Status:", response.status); // Log the response status
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then(data => {
-        console.log("API Data Received:", data); // Check the received data
-        if (data && typeof data === 'object' && data.hobby) {
+      .then(data =>{        
+        //check if valid data is received and set the hobby state
+        if(data && typeof data === 'object' && data.hobby){
           setHobby(data);
-        } else {
+        }else{
+          //set hobby to null if not
           setHobby(null);
         }
+        //set loading state to false after data is processed
         setLoading(false);
       })
-      .catch(error => {
-        console.error('Error fetching hobby:', error); // Log if there's an error
+      .catch(error =>{
+        //debugging purposes for error while fetching
+        console.error('Error fetching hobby:', error);
+        //set loading state to false if an error occurs
         setLoading(false);
       });
   };
 
-  // Rendering the category buttons
-  return (
+  //make category buttons and hobby details for display
+  return(
     <div className="hobby-container">
+      {/*header*/}
       <h2>Suggested Hobby</h2>
+      {/*buttons for each category*/}
       <div className="category-buttons">
-        {categories.map((category) => (
+        {categories.map((category)=>(
           <button
-            key={category}
-            onClick={() => fetchRandomHobby(category)}
+            key={category}      //create unique key for each button
+            onClick={()=>fetchRandomHobby(category)}    //set to the specific hobby when clicked
             className="category-button"
           >
+            {/*display category name with underscores*/}
             {category.replace('_', ' ')}
           </button>
         ))}
       </div>
 
-      {/* Display loading or fetched hobby */}
-      {loading ? (
+      {/*display 'loading...' or hobby details based on state*/}
+      {loading?(
+        //show loading text while data is being fetched
         <p className="loading">Loading...</p>
-      ) : (
+      ):(
         hobby ? (
+          //display hobby details
           <div className="hobby-details">
             <p><strong>Hobby:</strong> {hobby.hobby}</p>
             <p><strong>Category:</strong> {hobby.category}</p>
@@ -77,11 +83,11 @@ const HobbySuggestion = () => {
             </a>
           </div>
         ) : (
+          //display as below if hobby is not available
           <p>No hobby available. Please select a category!</p>
         )
       )}
     </div>
   );
 };
-
 export default HobbySuggestion;
