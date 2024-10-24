@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 const HobbySuggestion = () => {
   const [hobby, setHobby] = useState(null);
   const [loading, setLoading] = useState(false);
-  const API_KEY = ''; // Replace with your API key from API Ninjas
+  const API_KEY = process.env.REACT_APP_API_KEY;
   const categories = [
     'general',
     'sports_and_outdoors',
